@@ -9,14 +9,17 @@ The main aim of this project is to provide a hands-on learning experience, allow
 <h3>Functionalities implemented:</h3>
 
   <b>Public Content: </b><br><br>
-        Information pages about the company.<br>
+        Information about the company.<br>
         Display of products or services.<br>
         Contact form for user interaction.<br>
 
   <b>Administrative area:</b><br><br>
         Secure login for administrator.<br>
-        Site content management.<br>
-        Storage of data and security-related information.<br>
+        Content management.<br>
+        Access to customer data storage (contact forms) and security information related to logins.<br>
+
+
+ Change the language of the texts according to your browser preferences (Portuguese or English). 
 
 <h3>Configuration and Execution:</h3>
 
@@ -34,4 +37,12 @@ Running the application:
 
       flask run
 
-Access http://localhost:5000.        
+Access 
+
+Public             
+          
+          http://localhost:5000.      
+
+Administrative
+
+         http://localhost:5000/login   
