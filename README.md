@@ -4,7 +4,7 @@ This is a practical project for a fictitious corporate website, developed with t
 
 <h2>Objective</h2>
 
-The main aim of this project is to provide a hands-on learning experience, allowing the exploration of fundamental web development concepts such as routing, form handling, session management and database integration using Flask.
+The main aim of this project is to provide a hands-on learning experience, allowing the exploration of fundamental web development concepts such as routing, form handling, session management and database integration using Flask.<br><br>
 
 <h3>Functionalities implemented:</h3>
 
@@ -19,7 +19,7 @@ The main aim of this project is to provide a hands-on learning experience, allow
         Access to customer data storage (contact forms) and security information related to logins.<br>
 
 
- Change the language of the texts according to your browser preferences (Portuguese or English). 
+ Change the language of the texts according to your browser preferences (Portuguese or English). <br><br>
 
 <h3>Configuration and Execution:</h3>
 
