@@ -20,14 +20,15 @@ The main aim of this project is to provide a hands-on learning experience, allow
 
 <h3>Configuration and Execution:</h3>
 
-Instalação de Dependências:
+
+Installation of dependencies:
 
   bash
  
         pip install -r requirements.txt
 
 
-Executando o Aplicativo:
+Running the application:
 
   bash
 
