@@ -12,6 +12,7 @@ The main aim of this project is to provide a hands-on learning experience, allow
         Information about the company.<br>
         Display of products or services.<br>
         Contact form for user interaction.<br>
+        Change the language of the texts according to your browser preferences (Portuguese or English).<br>
 
   <b>Administrative area:</b><br><br>
         Secure login for administrator.<br>
@@ -19,7 +20,7 @@ The main aim of this project is to provide a hands-on learning experience, allow
         Access to customer data storage (contact forms) and security information related to logins.<br>
 
 
- Change the language of the texts according to your browser preferences (Portuguese or English). <br><br>
+ <br><br>
 
 <h3>Configuration and Execution:</h3>
 
