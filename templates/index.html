@@ -1,0 +1,194 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+{% include "header.html" %}
+
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1">Fast Fix Solutions</h1>
+                <h3 class="mb-5"><em>Solutions for you</em></h3>
+           </div>
+        </header>
+
+        <!-- About-->
+        <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        {% if lg  %}
+                        <h2>Fast Fix Solutions está pronto para ajudá-lo</h2>
+                        {% else: %}
+                        <h2>Fast Fix Solutions is ready to help you</h2>
+                        {% endif %}
+
+                        {% if lg  %}
+                        <p class="lead mb-5">
+                        <h5>Aqui na Fast Fix Solutions, estamos movidos pela paixão de criar soluções que resolvam problemas reais. Acreditamos que todos merecem ter acesso a produtos e serviços que os ajudem a viver melhor.
+                        Nossa equipa é composta por profissionais talentosos e dedicados que estão sempre buscando novas maneiras de melhorar a vida das pessoas. Temos um espírito de colaboração e inovação que nos permite trabalhar juntos para encontrar soluções criativas e eficazes.
+                        </h5>   
+                        </p>
+                        {% else: %}
+                         <p class="lead mb-5">
+                           <h5>Here at Fast Fix Solutions, we are driven by a passion to create solutions that solve real problems. We believe that everyone deserves access to products and services that help them live better lives. Our team is made up of talented and dedicated professionals who are always looking for new ways to improve people's lives. We have a spirit of collaboration and innovation that allows us to work together to find creative and effective solutions.</h5>
+                        </p>
+
+                        {% endif %}
+                        {% if lg  %}
+                        <a class="btn btn-primary" href="#services">Serviços</a>
+                        {% else: %}
+                         <a class="btn btn-primary" href="#services">What We Offer</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Services-->
+        <section class="content-section bg-success text-white text-center" id="services">
+
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    {% if lg  %}
+                   <h2 class="mb-5">Os Nossos Serviços </h2>
+                    {% else: %}
+                    <h2 class="mb-5">What We Offer</h2>
+                    {% endif %}
+                </div>
+               {% if lg  %}
+                <div class="row gx-4 gx-lg-5">
+
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                   <h4><strong>1</strong></h4>
+                        <p class="text-faded mb-0"> serviço</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                      <h4><strong>2</strong></h4>
+                        <p class="text-faded mb-0">serviço</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                      <h4><strong>3</strong></h4>
+                        <p class="text-faded mb-0">
+                          serviço
+                            </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <h4><strong>4</strong></h4>
+                        <p class="text-faded mb-0">serviço </p>
+                    </div>
+                </div>
+                {% else: %}
+                 <div class="row gx-4 gx-lg-5">
+
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                   <h4><strong>1</strong></h4>
+                        <p class="text-faded mb-0">service</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                      <h4><strong>2</strong></h4>
+                        <p class="text-faded mb-0">service</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                      <h4><strong>3</strong></h4>
+                        <p class="text-faded mb-0">
+                           service
+                            </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                      <h4><strong>4</strong></h4>
+                        <p class="text-faded mb-0">service </p>
+                    </div>
+                </div>
+
+            {% endif %}
+            </div>
+
+        </section>
+        
+        
+       
+        <!-- Portfolio-->
+        <section style="background-image: url('static/img/white6.jpg');" class="content-section" id="portfolio">
+
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    {% if not lg  %}
+                    <h2 class="mb-5">Some Projects</h2>
+                    {% else: %}
+                     <h2 class="mb-5">Alguns Projectos</h2>
+                    {% endif %}
+                </div>
+
+                <!-- make for in data: -->
+                <!-- data -->
+                <br><br>
+                  {% for post in all_posts %}
+                 <div class="portfolio-item">
+
+                            <div class="card text-center" style=" text-align: left;
+  border: solid;">
+                            <div class="card-body" >
+                            <h4 class="card-title">Project: {{post.id}}</h4>
+                            <h3 class="card-text">{{post.title}}</h3>
+                                {% if not lg  %}
+                                <a href="{{ url_for('show_post', post_id=post.id) }}" class="btn btn-primary">More information</a>
+                                {% else: %}
+                                <a href="{{ url_for('show_post', post_id=post.id) }}" class="btn btn-primary">Mais informação</a>
+                                {% endif %}
+                            </div>
+                          </div>
+
+
+                            </div>
+                <div class="row gx-0">
+
+                    <div class="col-lg-6">
+
+
+                                {% if logged_in : %}
+                                <a href="{{url_for('delete_post', post_id=post.id) }}">✘</a>
+                                {% endif %}
+                        </div>
+                    </div>
+
+                 {% endfor %}
+                    {% if logged_in : %}
+                  <div class="clearfix">
+                 <a class="btn btn-primary float-right" href="{{url_for('add_new_post')}}">Create new project</a>
+                 </div>
+                 {% endif %}
+
+
+                    
+            </div>
+        </section>
+        
+        <!-- Contact-->
+        {% if send == False %}
+        <div class="map" id="contact" style="background-image: url('static/assets/img/bg-callout.jpg');">
+           
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <br><br>
+                          {% if lg  %}
+                        <h2 style="color:#FFF8DC">Quer utilizar os nossos serviços, contacte-nos</h2>
+                          {% else: %}
+                        <h2 style="color:white">Want to use our services, contact us</h2>
+                          {% endif %}
+                        <div class="my-5">
+                            {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+       {% endif %}
+
+
+{% include "footer.html" %}
+{% endblock %}
+
+ 
+ 

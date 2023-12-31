@@ -1,0 +1,36 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="width: 1000px;background-image: url('{{ url_for('static', filename='img/look.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+           
+            <h1>POST</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row" style="background-color:powderblue;">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {{ ckeditor.load() }}
+        {{ ckeditor.config(name='description') }}
+        {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+      </div>
+    </div>
+
+  </div>
+<br><br><br>
+  <a class="nav-link" style="position: fixed;bottom:0; width: 100%;" href="{{ url_for('index') }}"  ><h1>&larr;</h1></a>
+{% endblock %}
+

@@ -1,0 +1,55 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block content %}
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/projet.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto" >
+                <div class="post-heading">
+                    <h1 style="font-weight: 600;color:white">{{post.title}}</h1>
+                    <br><br>
+                </div>
+                <h4 style="font-weight: 50;font-family:FreeMono, monospace;color:white ">{{post.subtitle}}</h4></div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto" >
+                {% if lg  %}
+                {{ translate(text=post.description, src='en', dest=['pt']) | safe }}
+                {% else: %}
+                <div  class="lindo" ><br><br><br><br>
+                    {{post.description|safe }}
+                </div>
+                {% endif %}
+                {% if post.img_url %}
+                <a href="{{post.img_url}}">Link_Project
+                    {% endif %}
+                <hr>
+                {% if logged_in : %}
+                <br><br><br><br><br>
+                    <div class="clearfix" >
+                    <a class="btn btn-primary float-right" href="{{url_for('edit_post', post_id=post.id)}}">Edit
+                    </a>
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+
+
+    <a class="nav-link" style="position: fixed;bottom: 0; width: 100%;" href="{{ url_for('index') }}"  ><h1>&larr;</h1></a>
+  
+
+{% endblock %}
