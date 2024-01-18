@@ -29,21 +29,21 @@ Installation of dependencies:
 
   bash
  
-        pip install -r requirements.txt
+    pip install -r requirements.txt
 
 
 Running the application:
 
   bash
 
-      flask run
+    flask run
 
 Access 
 
 Public             
           
-          http://localhost:5000      
+    http://localhost:5000      
 
 Administrative
 
-         http://localhost:5000/login   
+    http://localhost:5000/login   
